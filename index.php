@@ -1,3 +1,24 @@
+<?php
+require 'connection.php';
+
+$countuser = "SELECT COUNT(UserID) FROM users";
+$countusersql = mysqli_query($conn, $countuser);
+$resultcountuser = mysqli_fetch_assoc($countusersql);
+
+$countressources = "SELECT COUNT(ResourceID) FROM resources";
+$countressourcesql = mysqli_query($conn, $countressources);
+$resultcountressource = mysqli_fetch_assoc($countressourcesql);
+
+$countcategory = "SELECT COUNT(CategoryID) FROM category";
+$countcategorysql = mysqli_query($conn, $countcategory);
+$resultcountcategory = mysqli_fetch_assoc($countcategorysql);
+
+$countsubcategory = "SELECT COUNT(SubcategoryID) FROM subcategory";
+$countsubcategorysql = mysqli_query($conn, $countsubcategory);
+$resultcountsubcategory = mysqli_fetch_assoc($countsubcategorysql);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,7 +63,7 @@
             <div class="header-mobile__bar">
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
-                        <a class="logo" href="index.html">
+                        <a class="logo" href="index.php">
                             <img src="images/icon/logo.png" alt="CoolAdmin" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
@@ -62,76 +83,23 @@
                             
                         </li>
                         <li>
-                            <a href="chart.html">
-                                <i class="fas fa-chart-bar"></i>Charts</a>
+                            <a href="Ressources.php">
+                                <i class="fas fa-chart-bar"></i>Ressources</a>
                         </li>
                         <li>
                             <a href="table.php">
-                                <i class="fas fa-table"></i>Tables</a>
+                                <i class="fas fa-table"></i>Users</a>
                         </li>
                         <li>
-                            <a href="form.html">
-                                <i class="far fa-check-square"></i>Forms</a>
+                            <a href="category.php">
+                                <i class="far fa-check-square"></i>Category</a>
                         </li>
                         <li>
-                            <a href="calendar.html">
-                                <i class="fas fa-calendar-alt"></i>Calendar</a>
+                            <a href="subcategory.php">
+                                <i class="fas fa-calendar-alt"></i>Subcategory</a>
                         </li>
                         
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-copy"></i>Pages</a>
-                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                <li>
-                                    <a href="login.html">Login</a>
-                                </li>
-                                <li>
-                                    <a href="register.html">Register</a>
-                                </li>
-                                <li>
-                                    <a href="forget-pass.html">Forget Password</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-desktop"></i>UI Elements</a>
-                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                <li>
-                                    <a href="button.html">Button</a>
-                                </li>
-                                <li>
-                                    <a href="badge.html">Badges</a>
-                                </li>
-                                <li>
-                                    <a href="tab.html">Tabs</a>
-                                </li>
-                                <li>
-                                    <a href="card.html">Cards</a>
-                                </li>
-                                <li>
-                                    <a href="alert.html">Alerts</a>
-                                </li>
-                                <li>
-                                    <a href="progress-bar.html">Progress Bars</a>
-                                </li>
-                                <li>
-                                    <a href="modal.html">Modals</a>
-                                </li>
-                                <li>
-                                    <a href="switch.html">Switchs</a>
-                                </li>
-                                <li>
-                                    <a href="grid.html">Grids</a>
-                                </li>
-                                <li>
-                                    <a href="fontawesome.html">Fontawesome Icon</a>
-                                </li>
-                                <li>
-                                    <a href="typo.html">Typography</a>
-                                </li>
-                            </ul>
-                        </li>
+                        
                     </ul>
                 </div>
             </nav>
@@ -153,89 +121,30 @@
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="index.html">Dashboard 1</a>
+                                    <a href="index.php">Dashboard 1</a>
                                 </li>
-                                <li>
-                                    <a href="index2.html">Dashboard 2</a>
-                                </li>
-                                <li>
-                                    <a href="index3.html">Dashboard 3</a>
-                                </li>
-                                <li>
-                                    <a href="index4.html">Dashboard 4</a>
-                                </li>
+                            
                             </ul>
                         </li>
                         <li>
-                            <a href="chart.html">
-                                <i class="fas fa-chart-bar"></i>Charts</a>
+                            <a href="ressources.php">
+                                <i class="fas fa-chart-bar"></i>Ressources</a>
                         </li>
                         <li>
                             <a href="table.php">
-                                <i class="fas fa-table"></i>Tables</a>
+                                <i class="fas fa-table"></i>Users</a>
                         </li>
                         <li>
-                            <a href="form.html">
-                                <i class="far fa-check-square"></i>Forms</a>
+                            <a href="category.php">
+                                <i class="far fa-check-square"></i>Category</a>
                         </li>
                         <li>
-                            <a href="calendar.html">
-                                <i class="fas fa-calendar-alt"></i>Calendar</a>
+                            <a href="subcategory.php">
+                                <i class="fas fa-calendar-alt"></i>Subcategory</a>
                         </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-copy"></i>Pages</a>
-                            <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li>
-                                    <a href="login.html">Login</a>
-                                </li>
-                                <li>
-                                    <a href="register.html">Register</a>
-                                </li>
-                                <li>
-                                    <a href="forget-pass.html">Forget Password</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-desktop"></i>UI Elements</a>
-                            <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li>
-                                    <a href="button.html">Button</a>
-                                </li>
-                                <li>
-                                    <a href="badge.html">Badges</a>
-                                </li>
-                                <li>
-                                    <a href="tab.html">Tabs</a>
-                                </li>
-                                <li>
-                                    <a href="card.html">Cards</a>
-                                </li>
-                                <li>
-                                    <a href="alert.html">Alerts</a>
-                                </li>
-                                <li>
-                                    <a href="progress-bar.html">Progress Bars</a>
-                                </li>
-                                <li>
-                                    <a href="modal.html">Modals</a>
-                                </li>
-                                <li>
-                                    <a href="switch.html">Switchs</a>
-                                </li>
-                                <li>
-                                    <a href="grid.html">Grids</a>
-                                </li>
-                                <li>
-                                    <a href="fontawesome.html">Fontawesome Icon</a>
-                                </li>
-                                <li>
-                                    <a href="typo.html">Typography</a>
-                                </li>
-                            </ul>
-                        </li>
+                        
+                        
+                        
                     </ul>
                 </nav>
             </div>
@@ -440,8 +349,8 @@
                                                 <i class="zmdi zmdi-account-o"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>10368</h2>
-                                                <span>members online</span>
+                                            <?php echo '<h2>'.$resultcountuser['COUNT(UserID)'].'</h2>' ?>
+                                                <span>Users</span>
                                             </div>
                                         </div>
                                         <div class="overview-chart">
@@ -458,8 +367,8 @@
                                                 <i class="zmdi zmdi-shopping-cart"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>388,688</h2>
-                                                <span>items solid</span>
+                                                <?php echo '<h2>' .$resultcountressource['COUNT(ResourceID)']. '</h2>' ?>
+                                                <span>Ressources</span>
                                             </div>
                                         </div>
                                         <div class="overview-chart">
@@ -476,8 +385,8 @@
                                                 <i class="zmdi zmdi-calendar-note"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>1,086</h2>
-                                                <span>this week</span>
+                                                <?php echo '<h2>' .$resultcountcategory['COUNT(CategoryID)']. '</h2>'?>
+                                                <span>Category</span>
                                             </div>
                                         </div>
                                         <div class="overview-chart">
@@ -494,8 +403,8 @@
                                                 <i class="zmdi zmdi-money"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>$1,060,386</h2>
-                                                <span>total earnings</span>
+                                                <?php echo '<h2>' .$resultcountsubcategory['COUNT(SubcategoryID)']. '</h2>'?>
+                                                <span>Subcategory</span>
                                             </div>
                                         </div>
                                         <div class="overview-chart">
